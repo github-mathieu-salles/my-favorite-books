@@ -10,6 +10,7 @@ export const useMyFavoriteBooks = () => {
     genreOptions: [],
     isLoading: false,
   });
+  const [selectedGenre, setSelectedGenre] = useState(null)
 
   useEffect(() => {
     setState((values) => { return {
@@ -18,6 +19,7 @@ export const useMyFavoriteBooks = () => {
     }})
 
     booksServer.askListBooks().then(({books, genreOptions}) => {
+      genreOptions.sort((a, b) => a.localeCompare(b))
       setState({
         books,
         genreOptions,
@@ -26,5 +28,5 @@ export const useMyFavoriteBooks = () => {
     })
   }, []);
 
-  return state
+  return { state, selectedGenre, setSelectedGenre }
 }

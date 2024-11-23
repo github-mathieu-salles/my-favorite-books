@@ -1,0 +1,49 @@
+.SearchSelect {
+  &-container {
+    display: inline-block;
+    position: relative;
+
+    input {
+      border: 1px solid #D9D9D9;
+      border-radius: 4px;
+      height: 26px;
+      width: 176px
+    }
+
+    &--open input {
+      border-color: #2BB24C;
+    }
+  }
+
+  &-input-suffix {
+    position: absolute;
+    right: 12px;
+    top: 11px;
+
+    .pointer {
+      cursor: pointer;
+    }
+
+    .invisible-suffix {
+      cursor: text;
+    }
+  }
+
+  &-dropdrown-container {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 #00000061;
+    max-height: 270px;
+    overflow-y: auto;
+    position: absolute;
+    width: 200px;
+
+    li {
+      padding: 6px 8px;
+
+      &:hover {
+        background-color: #EFEFEF;
+      }
+    }
+  }
+}

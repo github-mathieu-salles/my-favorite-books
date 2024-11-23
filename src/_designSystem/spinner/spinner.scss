@@ -1,0 +1,22 @@
+:root{
+
+}
+
+.spinner {
+  height: var(--spinner-size);
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    img.icon {
+      animation: spin infinite 1s linear;
+    }
+  }
+}

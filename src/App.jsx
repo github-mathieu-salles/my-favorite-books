@@ -1,7 +1,12 @@
+import {useMyFavoriteBooks} from "./hooks/useMyFavoriteBooks.js";
+
 export const App = () => {
+  const { books, isLoading } = useMyFavoriteBooks()
+
   return (
     <>
-      <p>my favorite books</p>
+      {isLoading && <p>Loading...</p>}
+      <p>my favorite books : {books.length}</p>
     </>
   )
 }

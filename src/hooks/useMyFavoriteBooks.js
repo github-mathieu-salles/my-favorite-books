@@ -18,7 +18,7 @@ export const useMyFavoriteBooks = () => {
       isLoading: true,
     }})
 
-    booksServer.askListBooks().then(({books, genreOptions}) => {
+    booksServer.askListBooks(selectedGenre).then(({books, genreOptions}) => {
       genreOptions.sort((a, b) => a.localeCompare(b))
       setState({
         books,
@@ -26,7 +26,7 @@ export const useMyFavoriteBooks = () => {
         isLoading: false,
       })
     })
-  }, []);
+  }, [selectedGenre]);
 
   return { state, selectedGenre, setSelectedGenre }
 }

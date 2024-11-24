@@ -4,6 +4,7 @@
   display: block;
   height: calc(138px * 4 + 56.5px);
   overflow: scroll;
+  width: calc(230px * 4);
 
   &:focus {
     outline: none;
@@ -47,11 +48,16 @@
     }
   }
 
-  .Table-body--loading {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: calc(100% - 56.5px);
-    width: 100%;
+  .Table-body {
+    &--loading, &--empty {
+      align-items: center;
+      color: #9E9E9E;
+      display: flex;
+      font-size: 0.815rem;
+      justify-content: center;
+      height: calc(100% - 56.5px);
+      width: 100%;
+    }
   }
+
 }

@@ -2,13 +2,20 @@ import {useMyFavoriteBooks} from "./hooks/useMyFavoriteBooks.js";
 import {SearchSelect} from "./_designSystem/searchSelect/searchSelect.jsx";
 import {FavoriteBookTable} from "./components/favoriteBooksTable/favoriteBookTable.jsx";
 
+import './app.scss'
+
 export const App = () => {
   const { state: {books, genreOptions, isLoading}, selectedGenre, setSelectedGenre } = useMyFavoriteBooks()
 
   return (
-    <>
-      <SearchSelect options={genreOptions} value={selectedGenre} onChange={setSelectedGenre} placeholder="Genre" />
-      <FavoriteBookTable books={books} isLoading={isLoading} />
-    </>
+    <div className="MyFavoriteBooks-Layout">
+      <h1>
+        📚 My Favorite Books
+      </h1>
+      <main>
+        <SearchSelect options={genreOptions} value={selectedGenre} onChange={setSelectedGenre} placeholder="Genre" />
+        <FavoriteBookTable books={books} isLoading={isLoading} />
+      </main>
+    </div>
   )
 }

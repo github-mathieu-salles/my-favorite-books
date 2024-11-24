@@ -4,7 +4,7 @@ import './table.scss'
 
 export const Table = ({meta: {caption, columns}, data, isLoading}) => {
   return (
-    <table className="Table">
+    <table className="Table" style={{ '--columns-length': columns.length }}>
       <caption>{caption}</caption>
       <thead>
       <tr>

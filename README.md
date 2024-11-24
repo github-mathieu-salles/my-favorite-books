@@ -9,7 +9,7 @@ We are using `npm` so to run this application on your local machine you need to 
 Then, you can run the following commands:
 
 ```bash
- npm run install && npm run dev
+ npm install && npm run dev
 ```
 
 You application will be running on `http://localhost:5173/`

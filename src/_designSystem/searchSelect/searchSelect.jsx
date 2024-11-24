@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 import clearIcon from "./assets/_ClearIcon.png";
 import rightIcon from "./assets/_RightIcon.png";
@@ -10,6 +10,12 @@ import './searchSelect.scss';
 export const SearchSelect = ({ options, value, onChange, placeholder }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [inputValue, setInputValue] = useState('')
+  const inputRef = useRef(null)
+
+  const openDropDown = (value) => {
+    setIsDropdownOpen(value)
+    inputRef.current.focus()
+  }
 
   const handleClick = (option) => {
     onChange(option)
@@ -57,13 +63,14 @@ export const SearchSelect = ({ options, value, onChange, placeholder }) => {
         placeholder={placeholder}
         type="text"
         value={capitalize(value) || inputValue}
-        onFocus={() => setIsDropdownOpen(!value)}
+        onFocus={() => openDropDown(!value)}
         onChange={handleInputChange}
+        ref={inputRef}
       />
       <div className="SearchSelect-input-suffix">
         {Boolean(value)
           ? <img src={clearIcon} className="pointer" alt="clear value" width={20} height={20} onClick={() => handleClick(null)}/>
-          : <img src={rightIcon} className="invisible-suffix" alt="" width={20} height={20} onClick={() => setIsDropdownOpen(true)}/>
+          : <img src={rightIcon} className="invisible-suffix" alt="" width={20} height={20} onClick={() => openDropDown(true)}/>
         }
       </div>
 

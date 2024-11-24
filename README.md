@@ -1,8 +1,15 @@
-# React + Vite
+# My favorite books app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+Connected to the most exhaustive book database API, this application will show you the top 10 most popular books of your favorite genre
 
-Currently, two official plugins are available:
+## Build & Run
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+We are using `npm` so to run this application on your local machine you need to have `node` and `npm` installed.
+Then, you can run the following commands:
+
+```bash
+ npm run install && npm run dev
+```
+
+You application will be running on `http://localhost:5173/`

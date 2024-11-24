@@ -1,13 +1,11 @@
 import {useEffect, useState} from "react";
 
-import './searchSelect.scss';
 import clearIcon from "./assets/_ClearIcon.png";
 import rightIcon from "./assets/_RightIcon.png";
 
-const capitalize = (string) => {
-  if (!string) return ''
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
+import {capitalize} from "../../helpers/string.jsx";
+
+import './searchSelect.scss';
 
 export const SearchSelect = ({ options, value, onChange, placeholder }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)

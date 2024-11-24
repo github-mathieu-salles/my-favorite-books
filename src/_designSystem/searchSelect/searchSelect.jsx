@@ -17,6 +17,12 @@ export const SearchSelect = ({ options, value, onChange, placeholder }) => {
     setIsDropdownOpen(false)
   }
 
+  const handleKeyUp = (e, option) => {
+    if (e.key === 'Enter') {
+      handleClick(option)
+    }
+  }
+
   const handleInputChange = (e) => {
     if (value) return
     setInputValue(e.target.value)
@@ -67,7 +73,9 @@ export const SearchSelect = ({ options, value, onChange, placeholder }) => {
             {filteredOptions.map(option => (
               <li
                 key={option}
+                tabIndex={0}
                 onClick={() => handleClick(option)}
+                onKeyUp={(e) => handleKeyUp(e, option)}
               >
                   {capitalize(option)}
               </li>

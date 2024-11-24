@@ -1,8 +1,6 @@
 import {Table} from "../../_designSystem/table/table.jsx";
 import {capitalize} from "../../helpers/string.jsx";
 
-import "./FavoriteBookTable.scss"
-
 export const FavoriteBookTable = ({ books, isLoading }) => {
 
   const meta = [
@@ -25,8 +23,6 @@ export const FavoriteBookTable = ({ books, isLoading }) => {
     },
   ]
   return (
-    <div className="FavoriteBookTable-Container">
-      <Table meta={meta} data={books} isLoading={isLoading} />
-    </div>
+    <Table meta={meta} data={books} isLoading={isLoading} />
   )
 }

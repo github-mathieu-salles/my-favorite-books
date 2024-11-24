@@ -13,7 +13,9 @@ export const App = () => {
         <span aria-hidden>📚</span> My Favorite Books
       </h1>
       <main>
-        <SearchSelect options={genreOptions} value={selectedGenre} onChange={setSelectedGenre} placeholder="Genre" />
+        <div>
+          <SearchSelect options={genreOptions} value={selectedGenre} onChange={setSelectedGenre} placeholder="Genre" />
+        </div>
         <FavoriteBookTable books={books} isLoading={isLoading} />
       </main>
     </div>

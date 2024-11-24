@@ -1,11 +1,10 @@
-import {LoadingIndicator} from "../../components/loadingIndicator/loadingIndicator.jsx";
+import {TableBody} from "./tableBody.jsx";
 
 import './table.scss'
 
-export const Table = ({ meta: { caption, columns }, data, isLoading }) => {
-  if (data.length === 0) return null
+export const Table = ({meta: {caption, columns}, data, isLoading}) => {
   return (
-    <table className="Table">
+    <table className="Table" style={{ '--columns-length': columns.length }}>
       <caption>{caption}</caption>
       <thead>
       <tr>
@@ -14,20 +13,7 @@ export const Table = ({ meta: { caption, columns }, data, isLoading }) => {
         ))}
       </tr>
       </thead>
-      {!isLoading
-        ? <tbody>
-        {data.map((row) => (
-          <tr key={row.title}>
-            {columns.map(({key, transformer}) => (
-              <td key={row[key]}>{transformer ? transformer(row[key]) : row[key]}</td>
-            ))}
-          </tr>
-        ))}
-        </tbody>
-        : <div className="Table-body--loading">
-          <LoadingIndicator isLoading={isLoading}/>
-        </div>
-      }
+      <TableBody isLoading={isLoading} columns={columns} data={data}/>
     </table>
   )
 }

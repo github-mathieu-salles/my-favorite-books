@@ -14,7 +14,7 @@ export const App = () => {
       </h1>
       <main>
         <div>
-          <SearchSelect options={genreOptions} value={selectedGenre} onChange={setSelectedGenre} placeholder="Genre" />
+          <SearchSelect options={genreOptions} value={selectedGenre} onChange={setSelectedGenre} placeholder="Genre" name="genre" label="filter by genre" />
         </div>
         <FavoriteBookTable books={books} isLoading={isLoading} />
       </main>

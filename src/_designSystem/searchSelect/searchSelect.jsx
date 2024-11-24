@@ -7,7 +7,7 @@ import {capitalize} from "../../helpers/string.jsx";
 
 import './searchSelect.scss';
 
-export const SearchSelect = ({ options, value, onChange, placeholder }) => {
+export const SearchSelect = ({ options, value, onChange, placeholder, label, name }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [inputValue, setInputValue] = useState('')
   const inputRef = useRef(null)
@@ -61,6 +61,8 @@ export const SearchSelect = ({ options, value, onChange, placeholder }) => {
     <div className={`SearchSelect-container ${isDropdownOpen ? 'SearchSelect-container--open' : ''}`}>
       <input
         placeholder={placeholder}
+        aria-label={label}
+        name={name}
         type="text"
         value={capitalize(value) || inputValue}
         onFocus={() => openDropDown(!value)}

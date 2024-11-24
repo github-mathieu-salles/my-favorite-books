@@ -5,6 +5,22 @@
   height: calc(138px * 4 + 56.5px);
   overflow: scroll;
 
+  &:focus {
+    outline: none;
+  }
+
+  caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
   th {
     border-bottom: 1px solid #D9D9D9;
     color: #757575;

@@ -2,26 +2,38 @@ import {LoadingIndicator} from "../../components/loadingIndicator/loadingIndicat
 
 export const TableBody = ({ columns, data, isLoading }) => {
   if (isLoading) return (
-    <div className="Table-body--loading">
-      <LoadingIndicator isLoading={isLoading}/>
-    </div>
+    <tbody className="Table-body--loading">
+      <tr>
+        <td>
+          <div >
+            <LoadingIndicator isLoading={isLoading}/>
+          </div>
+        </td>
+      </tr>
+    </tbody>
   )
 
   if (data.length === 0) return (
-    <div className="Table-body--empty">
-      No data available
-    </div>
+    <tbody className="Table-body--empty">
+      <tr>
+        <td>
+          <div >
+            No data available
+          </div>
+        </td>
+      </tr>
+    </tbody>
   )
 
   return (
     <tbody>
     {data.map((row) => (
-      <tr key={row.title}>
-        {columns.map(({key, transformer}) => (
-          <td key={row[key]}>{transformer ? transformer(row[key]) : row[key]}</td>
-        ))}
-      </tr>
-    ))}
+        <tr key={row.title}>
+          {columns.map(({key, transformer}) => (
+            <td key={row[key]}>{transformer ? transformer(row[key]) : row[key]}</td>
+          ))}
+        </tr>
+      ))}
     </tbody>
   )
 }

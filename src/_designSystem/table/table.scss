@@ -68,8 +68,14 @@
       display: flex;
       font-size: 0.815rem;
       justify-content: center;
-      height: calc(100% - 56.5px);
       width: 100%;
+
+      td {
+        align-items: center;
+        border: none;
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 

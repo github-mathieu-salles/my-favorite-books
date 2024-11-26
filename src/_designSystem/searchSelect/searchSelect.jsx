@@ -71,7 +71,7 @@ export const SearchSelect = ({ options, value, onChange, placeholder, label, nam
       />
       <div className="SearchSelect-input-suffix">
         {Boolean(value)
-          ? <img src={clearIcon} className="pointer" alt="clear value" width={20} height={20} onClick={() => handleClick(null)}/>
+          ? <img src={clearIcon} className="pointer" alt="clear value" tabIndex={0} width={20} height={20} onKeyUp={(e) => handleKeyUp(e, null)} onClick={() => handleClick(null)}/>
           : <img src={rightIcon} className="invisible-suffix" alt="" width={20} height={20} onClick={() => openDropDown(true)}/>
         }
       </div>
